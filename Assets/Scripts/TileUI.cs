@@ -9,11 +9,15 @@ public class TileUI : MonoBehaviour
     [SerializeField] Image _tileColor;
     [SerializeField] TextMeshProUGUI _tileNumber;
 
+    public int xIndex;
+    public int yIndex;
+
     private Tile _tile;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(TileClicked);
+        ToggleUI(false);
     }
 
     public void AssignTile(Tile tile)
