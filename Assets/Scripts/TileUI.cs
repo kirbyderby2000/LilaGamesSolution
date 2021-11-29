@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 public class TileUI : MonoBehaviour
 {
     [SerializeField] Image _tileColor;
     [SerializeField] TextMeshProUGUI _tileNumber;
 
     private Tile _tile;
-    
+
+    private void Awake()
+    {
+        GetComponent<Button>().onClick.AddListener(TileClicked);
+    }
+
     public void AssignTile(Tile tile)
     {
         _tile = tile;
@@ -32,4 +38,12 @@ public class TileUI : MonoBehaviour
         _tileColor.enabled = toggle;
         _tileNumber.enabled = toggle;
     }
+
+    private void TileClicked()
+    {
+        OnTileClicked.Invoke(this);
+    }
+
+
+    public UnityEvent<TileUI> OnTileClicked = new UnityEvent<TileUI>();
 }
