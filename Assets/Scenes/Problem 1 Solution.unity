@@ -430,8 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 2272599849921146513, guid: 307c3e5c6687b4f438d384da157df524, type: 3}
-  _gridParent: {fileID: 1917114351}
   rootCanvas: {fileID: 820467742}
-  _nTiles: 50
+  _nTiles: 100
   _areaOfInterestSize: 1
   _gridRows: 10
